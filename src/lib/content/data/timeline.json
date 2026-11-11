@@ -1,0 +1,64 @@
+{
+	"timeline": [
+		{
+			"id": "ml-study",
+			"period": "2023 - PRESENT",
+			"role": "Machine Learning & Deep Learning",
+			"company": "Self-Directed Study (Coursera, deeplearning.ai)",
+			"type": "education",
+			"description": "Intensive study of ML fundamentals through Andrew Ng's courses. Covered supervised learning, neural networks, deep learning architectures, and practical ML deployment.",
+			"achievements": [
+				"Completed 12+ courses in ML/DL fundamentals",
+				"Studied 300+ hours covering math, theory, and implementation",
+				"Built and trained neural networks using PyTorch and TensorFlow"
+			],
+			"tags": ["Machine Learning", "Deep Learning", "Python", "PyTorch"],
+			"status": "active"
+		},
+		{
+			"id": "security-study",
+			"period": "2023 - PRESENT",
+			"role": "Security & Penetration Testing",
+			"company": "TryHackMe",
+			"type": "education",
+			"description": "Hands-on security training through CTF challenges and penetration testing labs. Focus on web application security, OWASP Top 10, and defensive security.",
+			"achievements": [
+				"Completed 50+ security challenges and labs",
+				"Practiced exploitation of common web vulnerabilities",
+				"Earned certifications in offensive and defensive security"
+			],
+			"tags": ["Security", "Pentesting", "OWASP", "TryHackMe"],
+			"status": "active"
+		},
+		{
+			"id": "senior-dev",
+			"period": "2020 - PRESENT",
+			"role": "Senior Developer / Architect",
+			"company": "Company Name",
+			"type": "work",
+			"description": "Led development of secure, scalable applications. Responsible for architecture decisions, security assessments, and purple team collaboration with penetration testers.",
+			"achievements": [
+				"Architected microservices platform serving 100K+ users",
+				"Reduced security vulnerabilities by 68% through systematic reviews",
+				"Implemented zero-trust security model across team's codebase"
+			],
+			"tags": ["Architecture", "Security", "Purple Team", "Python"],
+			"status": "active"
+		},
+		{
+			"id": "senior-dev",
+			"period": "2020 - PRESENT",
+			"role": "Senior Developer / Architect",
+			"company": "Company Name",
+			"type": "work",
+			"description": "Led development of secure, scalable applications. Responsible for architecture decisions, security assessments, and purple team collaboration with penetration testers.",
+			"achievements": [
+				"Architected microservices platform serving 100K+ users",
+				"Reduced security vulnerabilities by 68% through systematic reviews",
+				"Implemented zero-trust security model across team's codebase"
+			],
+			"tags": ["Architecture", "Security", "Purple Team", "Python"],
+			"status": "active"
+		}
+	]
+}

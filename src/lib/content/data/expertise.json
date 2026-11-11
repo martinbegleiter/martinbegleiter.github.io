@@ -1,0 +1,67 @@
+{
+	"expertise": [
+		{
+			"id": "ai-ml",
+			"title": "AI & Machine Learning",
+			"icon": "psychology",
+			"iconBg": "neurology",
+			"description": "Deep learning fundamentals, neural network architectures, and ML model development through intensive studies of Andrew Ng's courses.",
+			"gridSize": "md:col-span-2 md:row-span-2",
+			"tags": ["PyTorch", "TensorFlow", "Neural Networks"],
+			"stats": [
+				{ "label": "Precision", "value": "99.8%" },
+				{ "label": "Optimization", "value": "0.02ms" }
+			]
+		},
+		{
+			"id": "security",
+			"title": "Security & Architecture",
+			"icon": "security",
+			"iconBg": "shield",
+			"description": "Hardening infrastructure through zero-trust principles and purple team testing. Specialized in threat detection pipelines.",
+			"gridSize": "md:col-span-2",
+			"tags": ["OWASP", "Vault", "Cloud Hardening"],
+			"stats": []
+		},
+		{
+			"id": "fullstack",
+			"title": "Full-Stack Dev",
+			"icon": "code",
+			"iconBg": "data_object",
+			"description": "Architecting scalable web applications with high-readability codebases.",
+			"gridSize": "md:col-span-1",
+			"tags": ["Svelte", "Node.js", "Python"],
+			"stats": []
+		},
+		{
+			"id": "performance",
+			"title": "Performance",
+			"icon": "query_stats",
+			"iconBg": "monitoring",
+			"description": "Optimizing throughput and reducing latency in distributed systems.",
+			"gridSize": "md:col-span-1",
+			"tags": ["Latency", "Throughput"],
+			"stats": []
+		},
+		{
+			"id": "performance",
+			"title": "Performance",
+			"icon": "query_stats",
+			"iconBg": "monitoring",
+			"description": "Optimizing throughput and reducing latency in distributed systems.",
+			"gridSize": "md:col-span-1",
+			"tags": ["Latency", "Throughput"],
+			"stats": []
+		},
+		{
+			"id": "performance",
+			"title": "Performance",
+			"icon": "query_stats",
+			"iconBg": "monitoring",
+			"description": "Optimizing throughput and reducing latency in distributed systems.",
+			"gridSize": "md:col-span-1",
+			"tags": ["Latency", "Throughput"],
+			"stats": []
+		}
+	]
+}

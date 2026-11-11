@@ -1,0 +1,85 @@
+WORK EXPERIENCE
+Feb 2021 - May 2026
+Resurs Bank AB
+Helsingborg, Sweden
+Lead fullstack developer on the Norwegian YaBank platform, responsible for backend and frontend development and DevOps automation. Worked with Spring Boot (Java/Kotlin) microservices, React frontends, and integrations with third-party banking and regulatory systems (Banqsoft, AML, SBL, tax, and credit risk services).
+Serving as Security Responsible for the Norwegian YaBank platform, with ownership of the team’s overall security posture. Coordinated penetration tests with external vendors, managed remediation of findings, and worked closely with development teams to implement secure coding practices and harden infrastructure.
+Designed and implemented a custom Infrastructure-as-Code framework using ArgoCD and Kubernetes Kustomize, administered OpenShift environments, and maintained legacy Tomcat applications. 
+Served as Lead Developer & Architect for the new web onboarding platform, a modular React npm library integrated into WordPress.
+Championed the adoption of GitHub Copilot for the yabank team, running team training sessions and writing Confluence guides on AI-assisted development best practices. In parallel, actively expanding my knowledge in machine learning (Andrew Ng – Coursera/DeepLearning.AI) and offensive security through hands-on labs and modules on TryHackMe.
+
+
+
+
+Jan 2020 - Ongoing
+Berendsen AB
+Malmö, Sweden
+I developed a new Android-application for the client from scratch. They were using a web solution from a third party before but wanted to move to a solution they themselves controlled. I helped out with the planning, requirements specification, design and implementation of the application and made sure it could be deployed using an internal EMM system (InTune). The work included implementation using Kotlin, work with a SQLite database with Androids Room on top and using third party libs for scanning barcodes. The app was developed using Android Jetpack (Architectural Components) such as Data Binding, Room, LiveData, ViewModels and WorkManager. We used OkHttp for communicating with the server. Since the server used a legacy solution we had to communicate with it using SOAP.
+
+2020 February - 2020 December
+Relatable AB
+Stockholm, Sweden
+I worked on developing Relatables internal web tools. This included work on a PostgreSQL database as well as a Redis database, both run in Heroku. The whole service was made up of around a dozen Heroku applications that were deployed using a pipeline from Github. Tests were run using CircleCI. We used Jest for unit tests and Cypress for integration tests. The backend used Node.js and Express. We worked on moving from a REST-based solution to a GraphQL-based one using Apollo-integration with Express. Regarding GraphQL, Hasura was used on top of PostgreSQL. On the front end Handlebars was used for the older parts but the newer parts used React and TypeScript. I was also lead on Dockerizing one of our servers so that it ran as Docker container inside an EC2 instance in the Amazon cloud. The work included integration towards several third party services such as Facebook, Instagram, Youtube, Google Drive and Hubspot. We also used the Auth0 service for authentication and NGrok as a way to create SSH-tunnels to servers.
+
+2019 February – 2019 August
+Hejmo AB
+Malmoe, Sweden
+I worked as a fullstack developer (subcontractor). The backend was SparkJava and was programmed using Kotlin. I Also used MongoDB, jQuery, HTML, CSS3 and Sass and also FreeMarker. I used techniques such as Promises (including the ES6 async/await), the Reflection API in Kotlin and Kotlins support for lambdas and functions as first class citizens of the language. I developed connections to third party services such as Amazon S3, Scrive, BankID, Billecta, UC and Tink using both JSON-based REST communication and XML-based communication. The web application was run on Heroku and used MongoDB mLab.
+
+2019 January – 2019 March
+EC Utbildning
+Malmoe, Sweden
+I worked as a teacher (subcontractor) for a course in Android development in Kotlin. This was the last course in a two year programmer education. As part of the content of the course I discussed the foundations of Android and Kotlin and also Google Firebase and several standard libraries used in Android, for instance for REST communication. I also presented RxJava as a simple way of handling threads and callbacks. I created all the course material including exercises and an examination project where the students had to create an app that used a REST API to get information and also used Google Firebase for saving data and for user authentication.
+
+
+2016 – 2018 
+Tunstall Nordic AB
+Malmoe, Sweden
+I worked as a senior developer programming alarm servers and android applications. I also prototyped new systems. In my work I used Java, Kotlin, Node.js. I also wrote Python scripts for handling our CI/CD environment and programmed a configuration management server using PHP. While prototyping I have also developed several Electron applications using Bootstrap for the UI. Other prototypes involved developing applications in Xamarin and performing migrations of server software to the Raspberry Pi platform. As part of my everyday job I was also responsible for my teams CI/CD environment using Jenkins, Gitlab, Python-scripting and Docker. I was also one of the lead developers in rewriting our server and app software to use REST communication instead of socket-based message communication. I also developed a new monitoring server that ran in a Docker-container using Node.js/Express in the backend and React/Material UI in the frontend.
+
+2014– 2016
+Sony Mobile Communications - Messaging App
+Lund, Sweden
+I worked with the messaging application. Initially with the regular messaging application and then with the new applications which used JOYN/RCS communication.
+
+2013 – 2014
+Sony Mobile Communications - Graphics/UI
+Lund, Sweden
+I worked with different patches to the Google Android platform. Mainly in the window handling and rendering systems. I also developed new graphical components that applications could use. Lastly I was also one of the lead developers responsible for Sony's Bidirectionality patch which mirrored the whole user interface for markets with right-to-left languages. This was the largest and most complex patch to the Android platform that Sony had. Did most of my programming in Java but also part of it in C++.
+
+2010 – 2013
+Sony Ericsson - Utility
+Lund, Sweden
+Worked in the team responsible for the Media Center, Sony Ericsson's product for handling of all media content on the phone. As part of this I programmed in C (using an in-house framework) on phones using OSE, Eneas real time operating system.
+
+2001 – 2002
+University of Texas at Austin - assistent in AI project for DARPA
+Austin, USA
+Worked in an AI-project partly financed by DARPA which was to develop an ontological system that was originally meant to be used for decision making but that was later redesigned to contain scientific information. The system in question was developed in LISP.
+
+
+
+
+
+
+
+EDUCATION
+2004 – 2011
+Master of Science in Computer Science
+Lund University, Lund
+As part of my education I took courses in mathematics, algorithm theory, operating systems, database systems, formal languages and automata, Java, C++, embedded systems, web development, software engineering and digital systems. I also took a specialization in AI which contained courses such as AI, machine learning and knowledge based systems.
+
+2002 – 2003
+Master program in Bioinformatics
+Lund University, Lund
+The education contained different techniques for analysis of biological data. I learned techniques such as: Principal Component Analysis, Hidden Markov Models, different clustering techniques, dynamical programming like the Viterbi algorithm and different forms of statistical analysis. This lead to a master thesis written at the bioinformatics department at The Technical University of Denmark which pertained to using measures from information theory to preprocess protein sequence data before it was fed into an artificial neural network. The programming was done in Perl but the artificial neural network was written in Fortran.
+
+2001 – 2002
+Exchange student in Natural Science, TASSEP
+University of Texas at Austin, Austin, USA
+I took courses in natural science but also computer science and bioinformatics.
+
+1996 – 2002
+Master of Science in Molecular Biology
+Lund University, Lund
+I took courses in chemistry, biochemistry, organic chemistry, mathematics, mathematical statistics, genetics, molecular genetics, cellular biology, microbiology, virology, physiology, faunistics, floristics, plant physiology and ecology.

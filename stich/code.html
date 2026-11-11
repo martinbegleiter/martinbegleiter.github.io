@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SENTINEL_MAX_REED // AI &amp; Security Architect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#1e293b",
+                        "primary-fixed-dim": "#fde047",
+                        "inverse-on-surface": "#f8fafc",
+                        "tertiary-container": "#38bdf8",
+                        "surface-container": "#0f172a",
+                        "surface": "#020617",
+                        "on-tertiary-container": "#0369a1",
+                        "surface-tint": "#fde047",
+                        "error-container": "#7f1d1d",
+                        "on-tertiary-fixed-variant": "#0c4a6e",
+                        "surface-container-low": "#0b1120",
+                        "on-tertiary-fixed": "#082f49",
+                        "on-secondary-fixed-variant": "#334155",
+                        "secondary-fixed": "#e2e8f0",
+                        "secondary-fixed-dim": "#cbd5e1",
+                        "tertiary": "#bae6fd",
+                        "inverse-primary": "#a16207",
+                        "on-surface": "#f1f5f9",
+                        "on-primary": "#422006",
+                        "on-background": "#f1f5f9",
+                        "tertiary-fixed-dim": "#7dd3fc",
+                        "secondary-container": "#1e293b",
+                        "tertiary-fixed": "#e0f2fe",
+                        "on-secondary": "#1e293b",
+                        "inverse-surface": "#f1f5f9",
+                        "on-surface-variant": "#94a3b8",
+                        "primary-fixed": "#fef08a",
+                        "surface-container-highest": "#1e293b",
+                        "surface-dim": "#020617",
+                        "surface-container-high": "#111827",
+                        "on-error": "#450a0a",
+                        "background": "#020617",
+                        "on-tertiary": "#075985",
+                        "surface-container-lowest": "#020617",
+                        "error": "#fca5a5",
+                        "on-secondary-fixed": "#0f172a",
+                        "surface-bright": "#1e293b",
+                        "primary": "#fde047",
+                        "secondary": "#94a3b8",
+                        "primary-container": "#fde047",
+                        "on-primary-fixed": "#422006",
+                        "surface-variant": "#0f172a",
+                        "on-error-container": "#fee2e2",
+                        "on-primary-fixed-variant": "#713f12",
+                        "outline": "#334155",
+                        "on-secondary-container": "#cbd5e1",
+                        "on-primary-container": "#422006"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Space Grotesk"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #020617;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(253, 224, 71, 0.03) 0%, transparent 100%),
+                repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.01) 0px, rgba(255, 255, 255, 0.01) 1px, transparent 1px, transparent 2px);
+            background-size: 100% 100%, 100% 4px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scanline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.15) 51%);
+            background-size: 100% 4px;
+            pointer-events: none;
+            z-index: 100;
+            opacity: 0.15;
+        }
+        .glitch-hover:hover {
+            text-shadow: 2px 0 #fde047, -2px 0 #38bdf8;
+        }
+        .bento-card {
+            background: #0b1120;
+            border: 1px solid rgba(253, 224, 71, 0.15);
+            box-shadow: 0 0 15px rgba(253, 224, 71, 0.02);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .bento-card:hover {
+            border-color: rgba(253, 224, 71, 0.4);
+            box-shadow: 0 0 30px rgba(253, 224, 71, 0.1), inset 0 0 20px rgba(56, 189, 248, 0.05);
+            transform: translateY(-2px);
+        }
+        .bg-illustrative-icon {
+            position: absolute;
+            right: -5%;
+            bottom: -5%;
+            font-size: 14rem;
+            opacity: 0.08;
+            pointer-events: none;
+            transition: all 0.6s ease;
+            color: #38bdf8; /* Light blue tint from tertiary-container */
+            filter: blur(1px);
+        }
+        .bento-card:hover .bg-illustrative-icon {
+            opacity: 0.15;
+            transform: scale(1.15) rotate(-8deg);
+            filter: blur(0px);
+        }
+    </style>
+</head>
+<body class="font-body text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
+<div class="scanline"></div>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#020617]/90 backdrop-blur-md border-b border-yellow-400/10 shadow-[0_0_20px_rgba(253,224,71,0.05)]">
+<div class="flex justify-between items-center px-8 py-4 w-full max-w-screen-2xl mx-auto">
+<div class="text-xl font-extrabold tracking-tighter text-primary-container font-headline">SENTINEL_MAX_REED</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-['Space_Grotesk'] tracking-widest text-xs font-bold uppercase text-primary-container border-b-2 border-primary-container pb-1" href="#home">HOME</a>
+<a class="font-['Space_Grotesk'] tracking-widest text-xs font-bold uppercase text-white/60 hover:text-white transition-colors" href="#expertise">EXPERTISE</a>
+<a class="font-['Space_Grotesk'] tracking-widest text-xs font-bold uppercase text-white/60 hover:text-white transition-colors" href="#timeline">TIMELINE</a>
+<a class="font-['Space_Grotesk'] tracking-widest text-xs font-bold uppercase text-white/60 hover:text-white transition-colors" href="#contact">CONTACT</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary-container text-on-primary-container px-4 py-1.5 text-[10px] font-bold tracking-widest uppercase hover:scale-95 transition-transform">LOGIN_SESSION</button>
+</div>
+</div>
+</header>
+<main class="pt-24 min-h-screen">
+<!-- Hero Section -->
+<section class="max-w-screen-2xl mx-auto px-8 mb-32 grid md:grid-cols-12 gap-8 items-center" id="home">
+<div class="md:col-span-8">
+<div class="inline-flex items-center gap-2 mb-6 text-primary-container font-mono text-sm tracking-tighter">
+<span class="material-symbols-outlined text-sm">terminal</span>
+<span>SESSION_ESTABLISHED // SOURCE: SECURE_UPLINK</span>
+</div>
+<h1 class="text-6xl md:text-9xl font-extrabold tracking-tighter text-on-surface mb-4 leading-[0.9] glitch-hover">
+                MAX<br/>REED<span class="text-primary-container">.</span>
+</h1>
+<p class="text-xl md:text-2xl font-medium text-on-surface-variant max-w-2xl mb-8 border-l-4 border-primary-container pl-6">
+                AI &amp; SECURITY ARCHITECT // SENIOR DEVELOPER
+            </p>
+<div class="bg-surface-container-low p-6 font-mono text-xs tracking-widest text-on-surface-variant/80 max-w-xl border-l border-primary-container/20">
+<p class="mb-1 text-primary-container">root@max_reed:~$ ./init_sequence.sh</p>
+<p class="mb-1">&gt; Booting system kernel V.2.0.4_STABLE...</p>
+<p class="mb-1">&gt; Initializing AI Integrity Protocols... [OK]</p>
+<p class="mb-1">&gt; Loading Security Architecture Modules... [OK]</p>
+<p>&gt; System ready. Awaiting input_</p>
+</div>
+</div>
+<div class="md:col-span-4 relative aspect-square">
+<div class="absolute inset-0 bg-primary-container/5 blur-[100px] rounded-full"></div>
+<img alt="Cyberpunk stylized digital portrait of a technical architect with holographic interface elements and sharp yellow lighting accents" class="relative z-10 w-full h-full object-cover grayscale contrast-125 border border-primary-container/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBQ8PLvgW_wkk83I65FmjoGM0MNnVnJJhQ1sbfAHUY-aAnqyZ3qe7y6KnjqYKVOU0guz8NzmPSIa-5y7EGP08lok9SEGpX7f6rJxv2XfvWIiQ_gCxCA_IjqEMEOW2iGeoMThktJVAYZEseXfQPqfHDH2hTUot1RaIFIaD8rAEVlPalF7saFy2361FWD1PvNETSTb9L-UTlVcP4a4_9QNb5mYhBr6lZGMObTRj4VeoRWdk9WA4HqYZctF0VT9Beb4nyLMb4yWQITaU"/>
+</div>
+</section>
+<!-- Expertise Matrix (Bento Box) -->
+<section class="max-w-screen-2xl mx-auto px-8 mb-40" id="expertise">
+<div class="flex items-baseline gap-4 mb-12">
+<h2 class="text-4xl font-bold tracking-tighter uppercase font-headline">EXPERTISE_MATRIX</h2>
+<div class="h-px grow bg-slate-800"></div>
+<span class="font-mono text-[10px] tracking-[0.3em] text-primary-container">VERIFIED_SKILLSET</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- AI Integrity -->
+<div class="md:col-span-2 md:row-span-2 bento-card p-10 group">
+<span class="material-symbols-outlined bg-illustrative-icon" style="font-variation-settings: 'FILL' 0;">shield_person</span>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-16">
+<span class="material-symbols-outlined text-5xl text-primary-container" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="text-[10px] font-mono tracking-widest text-on-surface-variant bg-surface/50 px-2 py-1 border border-white/5">CODE: AI_INTEG_01</span>
+</div>
+<h3 class="text-4xl font-bold mb-6 tracking-tighter uppercase">AI INTEGRITY</h3>
+<p class="text-lg text-on-surface-variant leading-relaxed mb-10 max-w-md">Specializing in the development of adversarial-resistant neural architectures and ethical alignment frameworks for large-scale deployments.</p>
+<div class="grid grid-cols-2 gap-6">
+<div class="bg-[#020617]/80 backdrop-blur-md p-5 border border-primary-container/20">
+<div class="text-[10px] text-primary-container uppercase font-bold tracking-widest mb-1">Robustness</div>
+<div class="text-3xl font-bold">99.8%</div>
+</div>
+<div class="bg-[#020617]/80 backdrop-blur-md p-5 border border-primary-container/20">
+<div class="text-[10px] text-primary-container uppercase font-bold tracking-widest mb-1">Precision</div>
+<div class="text-3xl font-bold">0.02ms</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SecOps -->
+<div class="md:col-span-2 bento-card p-8 group">
+<span class="material-symbols-outlined bg-illustrative-icon" style="font-variation-settings: 'FILL' 0;">hub</span>
+<div class="relative z-10 h-full flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-4 mb-6">
+<span class="material-symbols-outlined text-primary-container text-3xl">lan</span>
+<h3 class="text-2xl font-bold tracking-tight uppercase">SecOps &amp; Architecture</h3>
+</div>
+<p class="text-on-surface-variant mb-8 max-w-xl">Hardening infrastructure through zero-trust principles and automated threat detection pipelines. Distributed cloud hardening and orchestration.</p>
+</div>
+<div class="flex gap-3 flex-wrap">
+<span class="px-4 py-1.5 bg-[#020617]/80 backdrop-blur-sm text-[10px] font-bold tracking-widest uppercase text-white/80 border border-primary-container/20">Kubernetes</span>
+<span class="px-4 py-1.5 bg-[#020617]/80 backdrop-blur-sm text-[10px] font-bold tracking-widest uppercase text-white/80 border border-primary-container/20">Vault</span>
+<span class="px-4 py-1.5 bg-[#020617]/80 backdrop-blur-sm text-[10px] font-bold tracking-widest uppercase text-white/80 border border-primary-container/20">GCP/AWS</span>
+</div>
+</div>
+</div>
+<!-- Tech Stack -->
+<div class="bento-card p-8 group">
+<span class="material-symbols-outlined bg-illustrative-icon" style="font-variation-settings: 'FILL' 0;">data_object</span>
+<div class="relative z-10">
+<h3 class="text-xs font-bold tracking-widest uppercase mb-8 text-primary-container border-b border-primary-container/20 pb-2 inline-block">TECH_STACK (AI)</h3>
+<ul class="space-y-4 font-mono text-[11px] tracking-widest uppercase">
+<li class="flex justify-between items-center"><span class="text-white/80">PyTorch</span> <span class="text-primary-container font-bold">Expert</span></li>
+<li class="flex justify-between items-center"><span class="text-white/80">TensorFlow</span> <span class="text-white/40">Adv</span></li>
+<li class="flex justify-between items-center"><span class="text-white/80">HuggingFace</span> <span class="text-primary-container font-bold">Expert</span></li>
+<li class="flex justify-between items-center"><span class="text-white/80">CUDA</span> <span class="text-primary-container font-bold">Expert</span></li>
+</ul>
+</div>
+</div>
+<!-- Performance -->
+<div class="bento-card p-8 group">
+<span class="material-symbols-outlined bg-illustrative-icon" style="font-variation-settings: 'FILL' 0;">query_stats</span>
+<div class="relative z-10">
+<h3 class="text-xs font-bold tracking-widest uppercase mb-8 text-primary-container border-b border-primary-container/20 pb-2 inline-block">PERFORMANCE</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between text-[10px] font-mono text-white/40 mb-2">
+<span>LATENCY_REDUCTION</span>
+<span class="text-on-surface">92%</span>
+</div>
+<div class="h-1 bg-[#020617] relative overflow-hidden">
+<div class="absolute top-0 left-0 h-full bg-primary-container w-[92%] shadow-[0_0_10px_#fde047]"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-[10px] font-mono text-white/40 mb-2">
+<span>THROUGHPUT_OPT</span>
+<span class="text-on-surface">88%</span>
+</div>
+<div class="h-1 bg-[#020617] relative overflow-hidden">
+<div class="absolute top-0 left-0 h-full bg-primary-container w-[88%] shadow-[0_0_10px_#fde047]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Timeline Section -->
+<section class="max-w-screen-2xl mx-auto px-8 mb-40" id="timeline">
+<div class="flex items-baseline gap-4 mb-20">
+<h2 class="text-4xl font-bold tracking-tighter uppercase font-headline">TIMELINE_LOGS</h2>
+<div class="h-px grow bg-slate-800"></div>
+<span class="font-mono text-[10px] tracking-[0.3em] text-primary-container">CHRONO_STATUS</span>
+</div>
+<div class="relative space-y-24 before:absolute before:left-[11px] before:top-0 before:h-full before:w-[2px] before:bg-slate-800">
+<!-- Milestone 1 -->
+<div class="relative pl-12 group">
+<div class="absolute left-0 top-1.5 w-6 h-6 rounded-none bg-[#020617] border-2 border-primary-container flex items-center justify-center group-hover:shadow-[0_0_15px_#fde047] transition-all duration-300">
+<div class="w-2 h-2 bg-primary-container"></div>
+</div>
+<div class="grid md:grid-cols-4 gap-8">
+<div class="md:col-span-1">
+<span class="font-mono text-xl font-bold text-primary-container">2022 - PRESENT</span>
+<div class="text-[10px] font-bold tracking-widest text-white/30 uppercase mt-1">Lead Security Architect</div>
+</div>
+<div class="md:col-span-3 bento-card p-8 group-hover:border-primary-container/20">
+<h3 class="text-2xl font-bold mb-4 tracking-tighter uppercase">CYBERDYN SYSTEMS // GLOBAL INFRA</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">Orchestrating the transition to decentralized, AI-monitored security meshes across 4 continents. Reduced zero-day exploit impact by 68% using proprietary ML models.</p>
+<div class="inline-flex gap-4 items-center font-mono text-[9px] tracking-[0.2em] text-primary-container/60">
+<span>[ KEY_RESULT: ENCRYPTED_MESH_STABLE ]</span>
+<span>[ STATUS: ACTIVE ]</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Milestone 2 -->
+<div class="relative pl-12 group">
+<div class="absolute left-0 top-1.5 w-6 h-6 rounded-none bg-[#020617] border-2 border-slate-700 flex items-center justify-center group-hover:border-primary-container transition-all duration-300">
+<div class="w-2 h-2 bg-slate-700 group-hover:bg-primary-container"></div>
+</div>
+<div class="grid md:grid-cols-4 gap-8">
+<div class="md:col-span-1">
+<span class="font-mono text-xl font-bold text-white/40">2019 - 2022</span>
+<div class="text-[10px] font-bold tracking-widest text-white/30 uppercase mt-1">Senior AI Engineer</div>
+</div>
+<div class="md:col-span-3 bento-card p-8 group-hover:border-primary-container/20">
+<h3 class="text-2xl font-bold mb-4 tracking-tighter uppercase">AETHER DEFENSE SOLUTIONS</h3>
+<p class="text-on-surface-variant leading-relaxed mb-6">Designed real-time facial recognition and anomaly detection systems for high-security physical environments. Spearheaded the 'Aegis' core engine.</p>
+<div class="inline-flex gap-4 items-center font-mono text-[9px] tracking-[0.2em] text-white/20">
+<span>[ PROJECT: AEGIS_09 ]</span>
+<span>[ STATUS: ARCHIVED ]</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Engagement/Contact -->
+<section class="max-w-screen-2xl mx-auto px-8 mb-20 bento-card p-12 relative overflow-hidden" id="contact">
+<div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-9xl">contact_mail</span>
+</div>
+<div class="grid md:grid-cols-2 gap-16 relative z-10">
+<div>
+<h2 class="text-4xl font-bold tracking-tighter uppercase font-headline mb-8">ENGAGEMENT_PARAMETERS</h2>
+<p class="text-on-surface-variant mb-8 font-mono text-sm">CURRENTLY_INTERESTED_IN:</p>
+<ul class="space-y-4 mb-12">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container text-sm">check_circle</span>
+<span class="font-mono text-xs tracking-widest uppercase">Autonomous Security Swarms</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container text-sm">check_circle</span>
+<span class="font-mono text-xs tracking-widest uppercase">LLM Forensics &amp; Red-Teaming</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container text-sm">check_circle</span>
+<span class="font-mono text-xs tracking-widest uppercase">Post-Quantum Cryptography</span>
+</li>
+</ul>
+<div class="flex gap-6">
+<a class="w-12 h-12 flex items-center justify-center border border-slate-700 hover:border-primary-container group transition-colors" href="#">
+<span class="material-symbols-outlined text-white/40 group-hover:text-primary-container">code</span>
+</a>
+<a class="w-12 h-12 flex items-center justify-center border border-slate-700 hover:border-primary-container group transition-colors" href="#">
+<span class="material-symbols-outlined text-white/40 group-hover:text-primary-container">link</span>
+</a>
+<a class="w-12 h-12 flex items-center justify-center border border-slate-700 hover:border-primary-container group transition-colors" href="#">
+<span class="material-symbols-outlined text-white/40 group-hover:text-primary-container">mail</span>
+</a>
+</div>
+</div>
+<div class="flex flex-col justify-end">
+<div class="bg-[#020617] p-8 border border-slate-700">
+<label class="block font-mono text-[10px] tracking-[0.4em] text-primary-container uppercase mb-6">UPLINK_MESSAGE_FIELD</label>
+<div class="space-y-6">
+<div class="relative">
+<span class="absolute left-0 bottom-3 font-mono text-primary-container text-xs">&gt;</span>
+<input class="w-full bg-transparent border-0 border-b border-slate-700 pb-3 pl-6 font-mono text-xs focus:ring-0 focus:border-primary-container placeholder:text-white/20 uppercase tracking-widest" placeholder="IDENTITY_IDENTIFIER" type="text"/>
+</div>
+<div class="relative">
+<span class="absolute left-0 top-1 font-mono text-primary-container text-xs">&gt;</span>
+<textarea class="w-full bg-transparent border-0 border-b border-slate-700 pl-6 font-mono text-xs focus:ring-0 focus:border-primary-container placeholder:text-white/20 uppercase tracking-widest" placeholder="TRANSMISSION_PAYLOAD" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-4 font-bold tracking-widest uppercase hover:brightness-110 transition-all flex items-center justify-center gap-2">
+                            EXECUTE_TRANSMISSION
+                            <span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-primary-container/5 bg-[#020617]">
+<div class="flex flex-col items-center justify-center gap-4 w-full px-8">
+<div class="font-['Space_Grotesk'] text-[9px] tracking-tighter opacity-50 uppercase">© 2024 MAX_REED // ENCRYPTED_CONNECTION</div>
+<div class="flex gap-8">
+<a class="font-['Space_Grotesk'] text-[9px] tracking-widest text-white/30 hover:text-primary-container transition-colors uppercase" href="#">GITHUB</a>
+<a class="font-['Space_Grotesk'] text-[9px] tracking-widest text-white/30 hover:text-primary-container transition-colors uppercase" href="#">LINKEDIN</a>
+<a class="font-['Space_Grotesk'] text-[9px] tracking-widest text-white/30 hover:text-primary-container transition-colors uppercase" href="#">KEYBASE</a>
+</div>
+<div class="mt-4 flex items-center gap-2 opacity-20">
+<div class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></div>
+<span class="text-[8px] font-mono tracking-[0.5em] uppercase">SYSTEM_UPTIME: 100%</span>
+</div>
+</div>
+</footer>
+</body></html>
